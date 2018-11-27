@@ -23,12 +23,15 @@
 #include "jobmanagerdialog.h"
 #include "ui_jobmanagerdialog.h"
 
-#include <QtGui>
 
 #include "context.h"
 #include "jobmatrix.h"
 #include "settings.h"
 #include "structuredtextparser.h"
+
+#include <QtGui>
+#include <QFileDialog>
+#include <QMessageBox>
 
 JobManagerDialog::JobManagerDialog(QWidget *parent) :
     QWidget(parent),
@@ -199,7 +202,7 @@ void JobManagerDialog::on_removeButton_clicked(void)
 
 void JobManagerDialog::on_setRootButton_clicked(void)
 {
-  QFileDialog diag(NULL, "Choose a directory", m_rootDirName);
+  QFileDialog diag(nullptr, "Choose a directory", m_rootDirName);
   diag.setFileMode(QFileDialog::Directory);
   diag.setOption(QFileDialog::ShowDirsOnly);
 

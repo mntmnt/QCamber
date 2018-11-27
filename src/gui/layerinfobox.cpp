@@ -23,9 +23,10 @@
 #include "layerinfobox.h"
 #include "ui_layerinfobox.h"
 
-#include <QtGui>
 
 #include "context.h"
+#include <QtGui>
+#include <QStyle>
 
 static const QString bgStyle = \
   "%1 {"
@@ -37,9 +38,9 @@ static const QString bgStyle = \
 
 LayerInfoBox::LayerInfoBox(const QString& name, const QString& step,
     const QString& type):
-    QWidget(NULL),
+    QWidget(nullptr),
     ui(new Ui::LayerInfoBox),
-    m_name(name), m_step(step), m_layer(NULL), m_checked(false)
+    m_name(name), m_step(step), m_layer(nullptr), m_checked(false)
 {
   ui->setupUi(this);
   ui->layerName->setText(name);

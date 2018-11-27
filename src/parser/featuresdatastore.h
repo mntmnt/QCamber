@@ -63,7 +63,7 @@ public:
   const IDMapType& symbolNameMap(void) const { return m_symbolNameMap; }
   const IDMapType& attribNameMap(void) const { return m_attribNameMap; }
   const IDMapType& attribTextMap(void) const { return m_attribTextMap; }
-  const QList<Record*> records(void) const { return m_records; }
+  const QList<Record*> & records(void) const { return m_records; }
 
   const CountMapType& posLineCountMap(void) const { return m_posLineCountMap; }
   const CountMapType& posPadCountMap(void) const { return m_posPadCountMap; }

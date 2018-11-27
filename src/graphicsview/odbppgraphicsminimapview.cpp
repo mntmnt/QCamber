@@ -25,9 +25,11 @@
 #include "symbolfactory.h"
 #include "context.h"
 
+#include <QScrollBar>
+
 ODBPPGraphicsMiniMapView::ODBPPGraphicsMiniMapView(QWidget* parent):
   QGraphicsView(parent),
-  m_profile(NULL)
+  m_profile(nullptr)
 {
   m_scene = new ODBPPGraphicsScene(this);
   m_scene->setItemIndexMethod(QGraphicsScene::NoIndex);
@@ -52,10 +54,9 @@ ODBPPGraphicsMiniMapView::ODBPPGraphicsMiniMapView(QWidget* parent):
 
   connect(m_scene, SIGNAL(rectSelected(QRectF)), this,
       SLOT(zoomMainViewToRect(QRectF)));
-  connect(horizontalScrollBar(), SIGNAL(valueChanged(int)),
-      this, SLOT(updateLayerViewport(void)));
-  connect(verticalScrollBar(), SIGNAL(valueChanged(int)),
-      this, SLOT(updateLayerViewport(void)));
+
+  connect(horizontalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(updateLayerViewport()));
+  connect(verticalScrollBar(),   SIGNAL(valueChanged(int)), this, SLOT(updateLayerViewport()));
 }
 
 ODBPPGraphicsMiniMapView::~ODBPPGraphicsMiniMapView()
@@ -121,19 +122,19 @@ void ODBPPGraphicsMiniMapView::redrawSceneRect(QRectF rect)
   m_rect->setRect(rect);
 }
 
-void ODBPPGraphicsMiniMapView::updateLayerViewport(void)
+void ODBPPGraphicsMiniMapView::updateLayerViewport(/*void*/)
 {
   QRect vrect = viewport()->rect();
   QRectF srect = mapToScene(vrect).boundingRect();
   m_scene->updateLayerViewport(vrect, srect);
 }
 
-void ODBPPGraphicsMiniMapView::keyPressEvent(QKeyEvent* event)
+void ODBPPGraphicsMiniMapView::keyPressEvent(QKeyEvent* /*event*/)
 {
   // Do nothing
 }
 
-void ODBPPGraphicsMiniMapView::wheelEvent(QWheelEvent* event)
+void ODBPPGraphicsMiniMapView::wheelEvent(QWheelEvent* /*event*/)
 {
   // Do nothing
 }

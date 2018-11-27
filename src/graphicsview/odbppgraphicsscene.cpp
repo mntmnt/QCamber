@@ -22,9 +22,11 @@
 
 #include "odbppgraphicsscene.h"
 
-#include <QtGui>
 
 #include "context.h"
+#include <QtGui>
+#include <QGraphicsSceneMouseEvent>
+#include <QApplication>
 
 ODBPPGraphicsScene::ODBPPGraphicsScene(QObject* parent):
   QGraphicsScene(parent), m_state(S_AREA_ZOOM), m_measured(false)

@@ -32,6 +32,8 @@ INCLUDEPATH += . .build parser parser/odbpp symbol gui graphicsview
 
 DESTDIR = ../bin
 TARGET = qcamber
+QT += widgets
+CONFIG += c++11
 
 # Product information
 VERSION = 0.1.0

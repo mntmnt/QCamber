@@ -20,18 +20,24 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include <QtGui>
 
 #include "code39.h"
 #include "context.h"
 #include "jobmanagerdialog.h"
 #include "settings.h"
 
+#include <QtGui>
+#include <QApplication>
+
 int main(int argc, char *argv[])
 {
   QApplication app(argc, argv);
-  QApplication::setGraphicsSystem("raster");
-  QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+  ///TODO: This call is obsolete. QPA framework should be used here?
+  //QApplication::setGraphicsSystem("raster");
+
+  ///TODO: this function is removed. Is it required?
+  //QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+  QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
   Code39::initPatterns();
   Settings::load("config.ini");

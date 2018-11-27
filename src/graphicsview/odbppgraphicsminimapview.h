@@ -49,7 +49,7 @@ public slots:
   void zoomMainViewToRect(QRectF rect);
   void redrawSceneRect(QRectF rect);
   void setBackgroundColor(QColor color);
-  void updateLayerViewport(void);
+  void updateLayerViewport(/*void*/);
 
 protected:
   virtual void keyPressEvent(QKeyEvent* event);

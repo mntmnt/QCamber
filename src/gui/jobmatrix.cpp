@@ -142,13 +142,13 @@ void JobMatrix::setMatrix()
   ip = m_ds->getBlocksByKey("LAYER");
   for (StructuredTextDataStore::BlockIter it = ip.first; it != ip.second; ++it)
   {
-    text = (QString)it->second->get("TYPE").c_str();
+    text = QString::fromStdString(it->second->get("TYPE"));
     if(text == "DRILL"){
-        start = (QString)it->second->get("START_NAME").c_str();
-        end = (QString)it->second->get("END_NAME").c_str();
+        start = QString::fromStdString(it->second->get("START_NAME") );
+        end   = QString::fromStdString(it->second->get("END_NAME")   );
         if(start != "")
         {
-          drawDrillLine((QString)it->second->get("NAME").c_str(),
+          drawDrillLine(  QString::fromStdString(it->second->get("NAME") ),
                         m_layerNames.indexOf(start),m_layerNames.indexOf(end));
         }
     }
@@ -158,7 +158,7 @@ void JobMatrix::setMatrix()
           SLOT(selectDrillLine(int)));
   connect(ui->tableWidget,SIGNAL(itemClicked(QTableWidgetItem*)),this,
       SLOT(showLayer(QTableWidgetItem *)));
-  ui->tableWidget->verticalHeader()->setMovable(true);
+  ui->tableWidget->verticalHeader()->setSectionsMovable(true);
   ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
@@ -207,10 +207,16 @@ void JobMatrix::selectDrillLine(int index)
     for(int row = 0;row < m_layerNames.size();row++)
     {
       if (((item = ui->tableWidget->item(row,col)) != 0))
+      {
         if(col != target_col)
+        {
           item->setBackgroundColor(QColor("black"));
+        }
         else
+        {
           item->setBackgroundColor(QColor("red"));
+        }
+      }
     }
   }
 }

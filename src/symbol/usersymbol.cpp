@@ -35,9 +35,8 @@ UserSymbol::UserSymbol(const QString& def, const Polarity& polarity,
   QString path = ctx.loader->featuresPath("symbols/" + def);
   FeaturesDataStore* ds = CachedFeaturesParser::parse(path);
 
-  for (QList<Record*>::const_iterator it = ds->records().begin();
-      it != ds->records().end(); ++it) {
-    Symbol* symbol = (*it)->createSymbol();
+  for ( const Record* record : ds->records() ) {
+    Symbol* symbol = record->createSymbol();
     addChild(symbol);
     m_symbols.append(symbol);
   }

@@ -28,9 +28,9 @@
 #include "context.h"
 
 LayerFeatures::LayerFeatures(QString step, QString path, bool stepRepeat):
-  Symbol("features"), m_step(step), m_path(path), m_scene(NULL),
+  Symbol("features"), m_step(step), m_path(path), m_scene(nullptr),
   m_stepRepeatLoaded(false), m_showStepRepeat(stepRepeat),
-  m_reportModel(NULL)
+  m_reportModel(nullptr)
 {
   setHandlesChildEvents(true);
 
@@ -40,9 +40,8 @@ LayerFeatures::LayerFeatures(QString step, QString path, bool stepRepeat):
     return;
   }
 
-  for (QList<Record*>::const_iterator it = m_ds->records().begin();
-      it != m_ds->records().end(); ++it) {
-    m_symbols.append((*it)->createSymbol());
+  for ( const Record* record : m_ds->records() ) {
+    m_symbols.append(record->createSymbol());
   }
 
   m_posLineCount = m_ds->posLineCountMap();

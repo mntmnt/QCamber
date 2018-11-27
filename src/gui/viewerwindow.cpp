@@ -23,17 +23,19 @@
 #include "viewerwindow.h"
 #include "ui_viewerwindow.h"
 
-#include <QtGui>
-#include <QDebug>
 
 #include "context.h"
 #include "layerinfobox.h"
 #include "settingsdialog.h"
 #include "settings.h"
 
+#include <QtGui>
+#include <QDebug>
+#include <QComboBox>
+
 ViewerWindow::ViewerWindow(QWidget *parent) :
   QMainWindow(parent), ui(new Ui::ViewerWindow), m_displayUnit(U_INCH),
-  m_activeInfoBox(NULL), m_transition(false)
+  m_activeInfoBox(nullptr), m_transition(false)
 {
   ui->setupUi(this);
   setAttribute(Qt::WA_DeleteOnClose);

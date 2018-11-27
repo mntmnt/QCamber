@@ -23,9 +23,10 @@
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
-#include <QtGui>
 
 #include "settings.h"
+#include <QtGui>
+#include <QColorDialog>
 
 SettingsDialog::SettingsDialog(QWidget *parent) :
     QDialog(parent),
