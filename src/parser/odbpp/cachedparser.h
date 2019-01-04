@@ -47,7 +47,7 @@ private:
 };
 
 template <typename P, typename D>
-CachedParser<P, D>* CachedParser<P, D>::m_instance = NULL;
+CachedParser<P, D>* CachedParser<P, D>::m_instance = nullptr;
 
 template <typename P, typename D>
 CachedParser<P, D>::~CachedParser<P, D>()
@@ -56,7 +56,7 @@ CachedParser<P, D>::~CachedParser<P, D>()
       it != m_cache.end(); ++it) {
     delete it.value();
   }
-  m_instance = NULL;
+  m_instance = nullptr;
 }
 
 template <typename P, typename D>

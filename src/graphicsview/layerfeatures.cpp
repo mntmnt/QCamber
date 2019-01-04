@@ -275,7 +275,7 @@ void LayerFeatures::setShowStepRepeat(bool status)
 
   if (m_reportModel) {
     delete m_reportModel;
-    m_reportModel = NULL;
+    m_reportModel = nullptr;
   }
 
   if (status && !m_stepRepeatLoaded) {
@@ -312,7 +312,7 @@ QStandardItemModel* LayerFeatures::reportModel(void)
   const FeaturesDataStore::IDMapType& nameMap = m_ds->symbolNameMap();
   FeaturesDataStore::CountMapType countMap;
   QStandardItem* root = m_reportModel->invisibleRootItem();
-  QStandardItem* node = NULL;
+  QStandardItem* node = nullptr;
 
   unsigned total = 0, n_nodes = 0;
 
