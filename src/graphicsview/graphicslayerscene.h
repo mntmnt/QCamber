@@ -34,8 +34,8 @@ class GraphicsLayerScene: public QGraphicsScene {
   Q_OBJECT
 
 public:
-  GraphicsLayerScene(QObject* parent = 0);
-  virtual ~GraphicsLayerScene();
+  GraphicsLayerScene(QObject* parent = nullptr);
+  virtual ~GraphicsLayerScene() = default;
 
   void setGraphicsLayer(GraphicsLayer* layer);
   bool highlight(void);
@@ -48,7 +48,7 @@ signals:
   void featureSelected(Symbol*);
 
 private:
-  GraphicsLayer* m_graphicsLayer;
+  GraphicsLayer* m_graphicsLayer = nullptr;
   bool m_highlight;
   QList<Symbol*> m_selectedSymbols;
 };

@@ -32,10 +32,6 @@ GraphicsLayerScene::GraphicsLayerScene(QObject* parent):
   setItemIndexMethod(NoIndex);
 }
 
-GraphicsLayerScene::~GraphicsLayerScene()
-{
-}
-
 void GraphicsLayerScene::setGraphicsLayer(GraphicsLayer* layer)
 {
   m_graphicsLayer = layer;

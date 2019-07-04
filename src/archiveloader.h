@@ -36,7 +36,7 @@
 class ArchiveLoader {
 public:
   ArchiveLoader(QString filename);
-  ~ArchiveLoader();
+  ~ArchiveLoader() = default;
 
   QString absPath(QString path);
   QStringList listDir(QString filename);

@@ -31,10 +31,6 @@ ArchiveLoader::ArchiveLoader(QString filename): m_fileName(filename)
   m_dir = QDir(filename);
 }
 
-ArchiveLoader::~ArchiveLoader()
-{
-}
-
 QString ArchiveLoader::absPath(QString path)
 {
   return m_dir.absoluteFilePath(path);

@@ -45,7 +45,7 @@ class JobManagerDialog : public QWidget
   Q_OBJECT
     
 public:
-  explicit JobManagerDialog(QWidget *parent = 0);
+  explicit JobManagerDialog(QWidget *parent = nullptr);
   ~JobManagerDialog();
 
 public slots:
