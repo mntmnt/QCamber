@@ -162,7 +162,7 @@ void LayerInfoBox::on_activeIndicator_clicked()
   }
 }
 
-void LayerInfoBox::on_actionFeaturesHistogram_activated()
+void LayerInfoBox::on_actionFeaturesHistogram_triggered()
 {
   m_featuresHistogramWidget.setTreeViewModel(layer()->reportModel());
   m_featuresHistogramWidget.show();
