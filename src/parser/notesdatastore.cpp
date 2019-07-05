@@ -27,12 +27,12 @@ void NotesDataStore::putRecord(const QStringList& param)
   m_records.append(new NoteRecord(this, param));
 }
 
-const QList<NoteRecord*>& NotesDataStore::records(void)
+const QList<NoteRecord*>& NotesDataStore::records()
 {
   return m_records;
 }
 
-void NotesDataStore::dump(void)
+void NotesDataStore::dump()
 {
 }
 

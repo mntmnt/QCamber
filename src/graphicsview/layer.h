@@ -35,22 +35,22 @@
 class Layer: public GraphicsLayer {
 public:
   Layer(QString step, QString layer);
-  virtual ~Layer();
+  ~Layer();
 
   QString step();
   QString layer();
   Notes* notes();
-  QStandardItemModel* reportModel(void);
+  QStandardItemModel* reportModel();
 
   void setHighlightEnabled(bool status);
   void setShowStepRepeat(bool status);
 
-  virtual void setPen(const QPen& pen);
-  virtual void setBrush(const QBrush& brush);
+  void setPen(const QPen& pen) override;
+  void setBrush(const QBrush& brush) override;
 
 protected:
-  virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
-  virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event);
+  void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
+  void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event) override;
 
 private:
   LayerFeatures* m_features;

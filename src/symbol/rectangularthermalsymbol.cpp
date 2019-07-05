@@ -47,7 +47,7 @@ RectangularThermalSymbol::RectangularThermalSymbol(const QString& def, const Pol
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath RectangularThermalSymbol::painterPath(void)
+QPainterPath RectangularThermalSymbol::painterPath()
 {
   QPainterPath path;
 

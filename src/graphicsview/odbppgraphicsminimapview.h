@@ -38,7 +38,7 @@ public:
   ~ODBPPGraphicsMiniMapView();
 
   void loadProfile(QString step);
-  void zoomToAll(void);
+  void zoomToAll();
   void scaleView(qreal scaleFactor);
 
 signals:
@@ -49,12 +49,12 @@ public slots:
   void zoomMainViewToRect(QRectF rect);
   void redrawSceneRect(QRectF rect);
   void setBackgroundColor(QColor color);
-  void updateLayerViewport(/*void*/);
+  void updateLayerViewport();
 
 protected:
-  virtual void keyPressEvent(QKeyEvent* event);
-  virtual void wheelEvent(QWheelEvent* event);
-  virtual void resizeEvent(QResizeEvent* event);
+  void keyPressEvent(QKeyEvent*) override;
+  void wheelEvent(QWheelEvent*) override;
+  void resizeEvent(QResizeEvent*) override;
 
 private:
   ODBPPGraphicsScene* m_scene;

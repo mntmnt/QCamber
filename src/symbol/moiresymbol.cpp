@@ -48,7 +48,7 @@ MoireSymbol::MoireSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath MoireSymbol::painterPath(void)
+QPainterPath MoireSymbol::painterPath()
 {
   QPainterPath path;
 
@@ -82,7 +82,7 @@ QPainterPath MoireSymbol::painterPath(void)
 }
 
 void MoireSymbol::paint(QPainter *painter,
-    const QStyleOptionGraphicsItem *option, QWidget *widget)
+    const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
   if (m_polarity == P) {
     painter->setPen(m_pen);

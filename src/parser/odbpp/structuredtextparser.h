@@ -29,9 +29,9 @@
 class StructuredTextParser : public Parser {
 public:
   StructuredTextParser(const QString& filename);
-  virtual ~StructuredTextParser();
+  ~StructuredTextParser() = default;
 
-  virtual StructuredTextDataStore* parse(void);
+  StructuredTextDataStore* parse() override;
 };
 
 #endif /* __STRUCTURED_TEXT_PARSER_H__ */

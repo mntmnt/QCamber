@@ -44,14 +44,14 @@ public:
   void setHighlightEnabled(bool status);
   void clearHighlight(void);
 
-  void clearScene(void);
+  void clearScene();
   void addLayer(GraphicsLayer* layer);
   void removeLayer(GraphicsLayer* layer);
   void addItem(QGraphicsItem* item);
   void removeItem(QGraphicsItem* item);
 
-  void initialZoom(void);
-  void zoomToAll(void);
+  void initialZoom();
+  void zoomToAll();
   void scaleView(qreal scaleFactor);
   void scrollView(int dx, int dy);
 
@@ -60,7 +60,7 @@ signals:
 
 public slots:
   void zoomToRect(QRectF rect);
-  void updateLayerViewport(void);
+  void updateLayerViewport();
   void setBackgroundColor(QColor color);
 
 protected:

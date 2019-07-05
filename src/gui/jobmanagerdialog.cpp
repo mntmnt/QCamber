@@ -64,7 +64,7 @@ JobManagerDialog::~JobManagerDialog()
   delete m_model;
 } 
 
-void JobManagerDialog::on_browseButton_clicked(void)
+void JobManagerDialog::on_browseButton_clicked()
 {
   QFileDialog diag(nullptr, "Choose a tarball", "",
       "ODB++ database (*.tgz *.tar.gz)");
@@ -76,7 +76,7 @@ void JobManagerDialog::on_browseButton_clicked(void)
   }
 }
 
-void JobManagerDialog::on_importButton_clicked(void)
+void JobManagerDialog::on_importButton_clicked()
 {
   QString filename = ui->filenameLineEdit->text();
 
@@ -186,7 +186,7 @@ void JobManagerDialog::on_importButton_clicked(void)
 }
 
 
-void JobManagerDialog::on_removeButton_clicked(void)
+void JobManagerDialog::on_removeButton_clicked()
 {
   QString name = m_model->data(ui->listView->currentIndex()).toString();
 
@@ -200,7 +200,7 @@ void JobManagerDialog::on_removeButton_clicked(void)
   recurRemove(m_rootDirName + "/" + name);
 }
 
-void JobManagerDialog::on_setRootButton_clicked(void)
+void JobManagerDialog::on_setRootButton_clicked()
 {
   QFileDialog diag(nullptr, "Choose a directory", m_rootDirName);
   diag.setFileMode(QFileDialog::Directory);
@@ -235,7 +235,7 @@ int JobManagerDialog::execute(QString cmd, QStringList args)
   env.insert("PATH", env.value("PATH") +
       PATH_SEP + QCoreApplication::applicationDirPath());
   process.setProcessEnvironment(env);
-  connect(&process, SIGNAL(finished(int, QProcess::ExitStatus)),
+  connect(&process, SIGNAL(finished(int,QProcess::ExitStatus)),
       &loop, SLOT(quit()));
 
   process.start(cmd, args);

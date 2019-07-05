@@ -49,7 +49,7 @@ BarcodeRecord::BarcodeRecord(FeaturesDataStore* ds, const QStringList& param,
   text = dynamicText(param[++i]);
 }
 
-Symbol* BarcodeRecord::createSymbol(void) const
+Symbol* BarcodeRecord::createSymbol() const
 {
   Symbol* symbol = new BarcodeSymbol(this);
   setTransform(symbol);

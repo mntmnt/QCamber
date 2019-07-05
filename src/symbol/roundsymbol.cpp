@@ -42,7 +42,7 @@ RoundSymbol::RoundSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath RoundSymbol::painterPath(void)
+QPainterPath RoundSymbol::painterPath()
 {
   QPainterPath path;
 

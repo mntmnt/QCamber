@@ -34,9 +34,9 @@ class LineSymbol: public Symbol {
 public:
   LineSymbol(const LineRecord* rec);
 
-  virtual QString infoText(void);
-  virtual QString longInfoText(void);
-  virtual QPainterPath painterPath(void);
+  QString infoText() override;
+  QString longInfoText() override;
+  QPainterPath painterPath() override;
 
 private:
   qreal m_xs, m_ys;

@@ -32,9 +32,9 @@
 class Parser {
 public:
   Parser(const QString& filename);
-  virtual ~Parser();
+  virtual ~Parser() = default;
 
-  virtual DataStore* parse(void) = 0;
+  virtual DataStore* parse() = 0;
 
 protected:
   QString m_fileName;

@@ -55,31 +55,32 @@ public:
   void putBarcode(BarcodeRecord* rec);
   void putSurfaceRecord(SurfaceRecord* rec);
 
-  QString jobName(void) const { return m_jobName; }
-  QString stepName(void) const { return m_stepName; }
-  QString layerName(void) const { return m_layerName; }
+  QString jobName() const { return m_jobName; }
+  QString stepName() const { return m_stepName; }
+  QString layerName() const { return m_layerName; }
   QString attrlist(QString name) { return m_attrlist[name]; }
 
-  const IDMapType& symbolNameMap(void) const { return m_symbolNameMap; }
-  const IDMapType& attribNameMap(void) const { return m_attribNameMap; }
-  const IDMapType& attribTextMap(void) const { return m_attribTextMap; }
-  const QList<Record*> & records(void) const { return m_records; }
+  const IDMapType& symbolNameMap() const { return m_symbolNameMap; }
+  const IDMapType& attribNameMap() const { return m_attribNameMap; }
+  const IDMapType& attribTextMap() const { return m_attribTextMap; }
+  const QList<Record*> & records() const { return m_records; }
 
-  const CountMapType& posLineCountMap(void) const { return m_posLineCountMap; }
-  const CountMapType& posPadCountMap(void) const { return m_posPadCountMap; }
-  const CountMapType& posArcCountMap(void) const { return m_posArcCountMap; }
-  int posSurfaceCount(void) const { return m_posSurfaceCount; }
-  int posTextCount(void) const { return m_posTextCount; }
-  int posBarcodeCount(void) const { return m_posBarcodeCount; }
+  const CountMapType& posLineCountMap() const { return m_posLineCountMap; }
+  const CountMapType& posPadCountMap() const { return m_posPadCountMap; }
+  const CountMapType& posArcCountMap() const { return m_posArcCountMap; }
+  int posSurfaceCount() const { return m_posSurfaceCount; }
+  int posTextCount() const { return m_posTextCount; }
+  int posBarcodeCount() const { return m_posBarcodeCount; }
 
-  const CountMapType& negLineCountMap(void) const { return m_negLineCountMap; }
-  const CountMapType& negPadCountMap(void) const { return m_negPadCountMap; }
-  const CountMapType& negArcCountMap(void) const { return m_negArcCountMap; }
-  int negSurfaceCount(void) const { return m_negSurfaceCount; }
-  int negTextCount(void) const { return m_negTextCount; }
-  int negBarcodeCount(void) const { return m_negBarcodeCount; }
+  const CountMapType& negLineCountMap() const { return m_negLineCountMap; }
+  const CountMapType& negPadCountMap() const { return m_negPadCountMap; }
+  const CountMapType& negArcCountMap() const { return m_negArcCountMap; }
 
-  virtual void dump(void);
+  int negSurfaceCount() const { return m_negSurfaceCount; }
+  int negTextCount() const { return m_negTextCount; }
+  int negBarcodeCount() const { return m_negBarcodeCount; }
+
+  void dump() override;
 
 private:
   QString m_jobName;

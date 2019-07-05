@@ -70,7 +70,7 @@ ArcSymbol::ArcSymbol(const ArcRecord* rec):
   m_bounding = painterPath().boundingRect();
 }
 
-QString ArcSymbol::infoText(void)
+QString ArcSymbol::infoText()
 {
   QString info = QString("Arc, XC=%1, YC=%2, XS=%3, YS=%4, XE=%5, YE=%6, "
       "%7, %8, %9") \
@@ -83,7 +83,7 @@ QString ArcSymbol::infoText(void)
   return info;
 }
 
-QString ArcSymbol::longInfoText(void)
+QString ArcSymbol::longInfoText()
 {
   QString result(
       "Arc\n\n"
@@ -106,7 +106,7 @@ QString ArcSymbol::longInfoText(void)
     .arg(m_cw? "Yes": "No");
 }
 
-QPainterPath ArcSymbol::painterPath(void)
+QPainterPath ArcSymbol::painterPath()
 {
   QPainterPath path;
 

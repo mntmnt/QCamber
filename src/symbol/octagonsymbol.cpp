@@ -44,7 +44,7 @@ OctagonSymbol::OctagonSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath OctagonSymbol::painterPath(void)
+QPainterPath OctagonSymbol::painterPath()
 {
   QPainterPath path;
 

@@ -43,7 +43,7 @@ NoteSymbol::NoteSymbol(const NoteRecord* rec): Symbol("note")
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath NoteSymbol::painterPath(void)
+QPainterPath NoteSymbol::painterPath()
 {
   QPainterPath path;
 
@@ -61,17 +61,17 @@ QPainterPath NoteSymbol::painterPath(void)
 }
 
 void NoteSymbol::paint(QPainter *painter,
-    const QStyleOptionGraphicsItem *option, QWidget *widget)
+    const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
   painter->setPen(QPen(Qt::white, 0));
   painter->setBrush(Qt::gray);
   painter->drawPath(painterPath());
 }
 
-void NoteSymbol::mousePressEvent(QGraphicsSceneMouseEvent* event)
+void NoteSymbol::mousePressEvent(QGraphicsSceneMouseEvent* /*event*/)
 {
 }
 
-void NoteSymbol::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
+void NoteSymbol::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* /*event*/)
 {
 }

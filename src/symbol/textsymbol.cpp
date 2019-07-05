@@ -50,7 +50,7 @@ TextSymbol::TextSymbol(const TextRecord* rec):
   m_bounding = painterPath().boundingRect();
 }
 
-QString TextSymbol::infoText(void)
+QString TextSymbol::infoText()
 {
   QString info = QString("Text, X=%1, Y=%2, %3, %4, %5") \
     .arg(m_x).arg(m_y) \
@@ -60,7 +60,7 @@ QString TextSymbol::infoText(void)
   return info;
 }
 
-QString TextSymbol::longInfoText(void)
+QString TextSymbol::longInfoText()
 {
   QString result(
       "Text\n\n"
@@ -77,7 +77,7 @@ QString TextSymbol::longInfoText(void)
     .arg(m_font);
 }
 
-QPainterPath TextSymbol::painterPath(void)
+QPainterPath TextSymbol::painterPath()
 {
   QPainterPath path;
 

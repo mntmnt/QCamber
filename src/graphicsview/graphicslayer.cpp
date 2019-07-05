@@ -46,7 +46,7 @@ void GraphicsLayer::setLayerScene(GraphicsLayerScene* scene)
   m_layerScene->setGraphicsLayer(this);
 }
 
-QGraphicsScene* GraphicsLayer::layerScene(void)
+QGraphicsScene* GraphicsLayer::layerScene()
 {
   return m_layerScene;
 }
@@ -102,7 +102,7 @@ QRectF GraphicsLayer::boundingRect() const
 }
 
 void GraphicsLayer::paint(QPainter *painter,
-    const QStyleOptionGraphicsItem *option, QWidget *widget)
+    const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
   if (!m_layerScene) {
     return;
@@ -126,7 +126,7 @@ void GraphicsLayer::paint(QPainter *painter,
   painter->restore();
 }
 
-void GraphicsLayer::forceUpdate(void)
+void GraphicsLayer::forceUpdate()
 {
   m_prevSceneRect = QRectF();
   update();

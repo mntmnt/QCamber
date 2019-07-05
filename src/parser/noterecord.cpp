@@ -37,7 +37,7 @@ NoteRecord::NoteRecord(NotesDataStore* ds, const QStringList& param):
   text = QString(param[param.size() - 1]).replace("\\n", "\n").trimmed();
 }
 
-Symbol* NoteRecord::createSymbol(void) const
+Symbol* NoteRecord::createSymbol() const
 {
   Symbol* symbol = new NoteSymbol(this);
   symbol->setPos(x, -y);

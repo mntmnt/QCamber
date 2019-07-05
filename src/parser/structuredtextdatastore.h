@@ -53,14 +53,14 @@ public:
 
   StructuredTextDataStore();
   void newElement(string name);
-  bool commitElement(void);
+  bool commitElement();
 
   string get(string key);
   BlockIterPair getBlocksByKey(string key);
-  const ValueType& getValueData(void) const;
+  const ValueType& getValueData() const;
 
   void put(string key, string value);
-  virtual void dump(void);
+  void dump() override;
 
   static int dumpIndent;
 

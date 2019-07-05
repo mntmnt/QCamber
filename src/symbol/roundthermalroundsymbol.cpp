@@ -46,7 +46,7 @@ RoundThermalRoundSymbol::RoundThermalRoundSymbol(const QString& def, const Polar
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath RoundThermalRoundSymbol::painterPath(void)
+QPainterPath RoundThermalRoundSymbol::painterPath()
 {
   QPainterPath path;
 

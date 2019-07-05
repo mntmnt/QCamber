@@ -31,7 +31,7 @@ class UserSymbol: public Symbol {
 public:
   UserSymbol(const QString& def, const Polarity& polarity,
     const AttribData& attrib);
-  virtual ~UserSymbol();
+  ~UserSymbol() = default;
 
 private:
   QString m_def;

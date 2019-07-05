@@ -32,7 +32,7 @@ NotesParser::~NotesParser()
 {
 }
 
-NotesDataStore* NotesParser::parse(void)
+NotesDataStore* NotesParser::parse()
 {
   QFile file(m_fileName);
   if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {

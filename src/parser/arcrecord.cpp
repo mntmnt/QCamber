@@ -42,7 +42,7 @@ ArcRecord::ArcRecord(FeaturesDataStore* ds, const QStringList& param,
   cw = (param[++i] == "Y");
 }
 
-Symbol* ArcRecord::createSymbol(void) const
+Symbol* ArcRecord::createSymbol() const
 {
   return new ArcSymbol(this);
 }

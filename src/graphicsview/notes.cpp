@@ -50,7 +50,7 @@ Notes::~Notes()
 {
 }
 
-bool Notes::empty(void)
+bool Notes::empty()
 {
   return m_empty;
 }

@@ -44,7 +44,7 @@ VerticalHexagonSymbol::VerticalHexagonSymbol(const QString& def, const Polarity&
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath VerticalHexagonSymbol::painterPath(void)
+QPainterPath VerticalHexagonSymbol::painterPath()
 {
   QPainterPath path;
 

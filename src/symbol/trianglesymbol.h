@@ -31,7 +31,7 @@ public:
   TriangleSymbol(const QString& def, const Polarity& polarity,
       const AttribData& attrib);
 
-  virtual QPainterPath painterPath(void);
+  virtual QPainterPath painterPath();
 
 protected:
 

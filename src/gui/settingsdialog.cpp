@@ -60,12 +60,12 @@ SettingsDialog::~SettingsDialog()
   delete ui;
 }
 
-void SettingsDialog::accept(void)
+void SettingsDialog::accept()
 {
   hide();
 }
 
-void SettingsDialog::on_loadSystemColor_clicked(void)
+void SettingsDialog::on_loadSystemColor_clicked()
 {
   QStringList names, colors;
   names << "BG" << "C1" << "C2" << "C3" << "C4" << "C5" << "C6";
@@ -79,7 +79,7 @@ void SettingsDialog::on_loadSystemColor_clicked(void)
   reloadColorToolButtonColor();
 }
 
-void SettingsDialog::on_loadUserColor_clicked(void)
+void SettingsDialog::on_loadUserColor_clicked()
 {
   if (SETTINGS->get("Color", "UC1") == QVariant()) {
     on_loadSystemColor_clicked();
@@ -96,7 +96,7 @@ void SettingsDialog::on_loadUserColor_clicked(void)
   reloadColorToolButtonColor();
 }
 
-void SettingsDialog::on_saveUserColor_clicked(void)
+void SettingsDialog::on_saveUserColor_clicked()
 {
   QStringList names;
   names << "BG" << "C1" << "C2" << "C3" << "C4" << "C5" << "C6";
@@ -107,7 +107,7 @@ void SettingsDialog::on_saveUserColor_clicked(void)
   }
 }
 
-void SettingsDialog::reloadColorToolButtonColor(void)
+void SettingsDialog::reloadColorToolButtonColor()
 {
   updateColorToolButtonColor(ui->colorBG);
   updateColorToolButtonColor(ui->colorC1);

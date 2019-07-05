@@ -34,7 +34,7 @@ struct code39map {
 
 class Code39 {
 public:
-  static void initPatterns(void);
+  static void initPatterns();
   static QString encode(QString text, bool checksum=false, bool fasc=false);
 
 private:

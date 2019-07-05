@@ -29,13 +29,13 @@
 class FontParser: public Parser {
 public:
   FontParser(const QString& filename);
-  virtual ~FontParser();
+  ~FontParser();
   
-  virtual FontDataStore* parse(void);
+  FontDataStore* parse() override;
 
 private:
   void charLineData(const QStringList& param);
-  void charEnd(void);
+  void charEnd();
 
   CharRecord* m_currentChar;
 };

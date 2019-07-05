@@ -40,7 +40,7 @@ typedef enum { N_0 = 0, N_90, N_180, N_270, M_0, M_90, M_180, M_270 } Orient;
 class InvalidSymbolException: public std::exception {
 public:
   InvalidSymbolException(const char* msg): m_msg(msg) {}
-  virtual const char* what() const throw() { return m_msg; }
+  const char* what() const noexcept override { return m_msg; }
 
 private:
   const char* m_msg;
@@ -52,24 +52,24 @@ public:
       AttribData attr = AttribData());
   virtual ~Symbol();
 
-  QString name(void);
-  virtual QString infoText(void);
-  virtual QString longInfoText(void);
-  AttribData attrib(void);
+  QString name();
+  virtual QString infoText();
+  virtual QString longInfoText();
+  AttribData attrib();
 
   virtual void setPen(const QPen& pen);
   virtual void setBrush(const QBrush& brush);
-  virtual QPainterPath painterPath(void);
+  virtual QPainterPath painterPath();
 
   void addChild(Symbol* symbol);
-  void restoreColor(void);
+  void restoreColor();
 
   virtual QRectF boundingRect() const;
   virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
       QWidget *widget);
   virtual QPainterPath shape() const {
     return const_cast<Symbol*>(this)->painterPath();
-  };
+  }
 
 protected:
   virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);

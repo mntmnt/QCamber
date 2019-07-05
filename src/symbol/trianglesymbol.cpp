@@ -43,7 +43,7 @@ TriangleSymbol::TriangleSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath TriangleSymbol::painterPath(void)
+QPainterPath TriangleSymbol::painterPath()
 {
   QPainterPath path;
 

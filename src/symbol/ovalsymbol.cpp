@@ -43,7 +43,7 @@ OvalSymbol::OvalSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath OvalSymbol::painterPath(void)
+QPainterPath OvalSymbol::painterPath()
 {
   QPainterPath path;
 

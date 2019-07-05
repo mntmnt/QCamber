@@ -46,7 +46,7 @@ SquareThermalSymbol::SquareThermalSymbol(const QString& def, const Polarity& pol
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath SquareThermalSymbol::painterPath(void)
+QPainterPath SquareThermalSymbol::painterPath()
 {
   QPainterPath path;
 

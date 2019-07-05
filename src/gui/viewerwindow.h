@@ -57,33 +57,33 @@ public:
   void setLayers(const QStringList& layers, const QStringList& types);
   void clearLayout(QLayout* , bool deleteWidgets = true);
   void showLayer(QString name);
-  virtual void show(void);
+  virtual void show();
 
 signals:
   void bgColorChanged(QColor);
 
 public slots:
-  void on_actionSetColor_triggered(void);
+  void on_actionSetColor_triggered();
 
-  void on_actionZoomIn_triggered(void);
-  void on_actionZoomOut_triggered(void);
-  void on_actionHome_triggered(void);
+  void on_actionZoomIn_triggered();
+  void on_actionZoomOut_triggered();
+  void on_actionHome_triggered();
   void on_actionMousePan_toggled(bool checked);
   void on_actionAreaZoom_toggled(bool checked);
-  void on_actionPanLeft_triggered(void);
-  void on_actionPanRight_triggered(void);
-  void on_actionPanUp_triggered(void);
-  void on_actionPanDown_triggered(void);
+  void on_actionPanLeft_triggered();
+  void on_actionPanRight_triggered();
+  void on_actionPanUp_triggered();
+  void on_actionPanDown_triggered();
   void on_actionHighlight_toggled(bool checked);
-  void on_actionClearHighlight_triggered(void);
-  void on_actionFeatureProperties_triggered(void);
+  void on_actionClearHighlight_triggered();
+  void on_actionFeatureProperties_triggered();
   void on_actionMeasure_toggled(bool checked);
   void on_actionShowOutline_toggled(bool checked);
   void on_actionShowStepRepeat_toggled(bool checked);
   void on_actionShowNotes_toggled(bool checked);
 
 protected:
-  QColor nextColor(void);
+  QColor nextColor();
 
 private slots:
   void toggleShowLayer(bool selected);

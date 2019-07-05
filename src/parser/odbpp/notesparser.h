@@ -29,9 +29,9 @@
 class NotesParser: public Parser {
 public:
   NotesParser(const QString& filename);
-  virtual ~NotesParser();
+  ~NotesParser();
 
-  virtual NotesDataStore* parse(void);
+  NotesDataStore* parse() override;
 };
 
 #endif /* __NOTES_PARSER_H__ */

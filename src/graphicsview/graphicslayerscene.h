@@ -35,12 +35,12 @@ class GraphicsLayerScene: public QGraphicsScene {
 
 public:
   GraphicsLayerScene(QObject* parent = nullptr);
-  virtual ~GraphicsLayerScene() = default;
+  ~GraphicsLayerScene() = default;
 
   void setGraphicsLayer(GraphicsLayer* layer);
-  bool highlight(void);
+  bool highlight();
   void setHighlightEnabled(bool status);
-  void clearHighlight(void);
+  void clearHighlight();
 
   void updateSelection(Symbol* symbol);
 

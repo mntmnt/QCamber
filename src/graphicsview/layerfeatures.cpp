@@ -73,7 +73,7 @@ LayerFeatures::~LayerFeatures()
   }
 }
 
-void LayerFeatures::loadStepAndRepeat(void)
+void LayerFeatures::loadStepAndRepeat()
 {
   QString path = ctx.loader->absPath(QString("steps/%1/stephdr").arg(m_step));
   StructuredTextDataStore* hds = CachedStructuredTextParser::parse(path);
@@ -99,7 +99,7 @@ void LayerFeatures::loadStepAndRepeat(void)
     m_activeRect.setY(m_activeRect.y() + top_active);
     m_activeRect.setWidth(m_activeRect.width() - right_active);
     m_activeRect.setHeight(m_activeRect.height() - bottom_active);
-  } catch(StructuredTextDataStore::InvalidKeyException) {
+  } catch( const StructuredTextDataStore::InvalidKeyException & ) {
   }
 
   if (ip.first == ip.second) {
@@ -294,7 +294,7 @@ void LayerFeatures::setShowStepRepeat(bool status)
   }
 }
 
-QStandardItemModel* LayerFeatures::reportModel(void)
+QStandardItemModel* LayerFeatures::reportModel()
 {
   if (m_reportModel) {
     return m_reportModel;

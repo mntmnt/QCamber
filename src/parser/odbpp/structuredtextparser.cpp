@@ -29,7 +29,7 @@
 #include "db.tab.h"
 
 extern struct yycontext yyctx;
-extern int yyparse (void);
+extern int yyparse ();
 extern FILE* yyin;
 
 StructuredTextParser::StructuredTextParser(const QString& filename):
@@ -40,11 +40,7 @@ StructuredTextParser::StructuredTextParser(const QString& filename):
 #endif
 }
 
-StructuredTextParser::~StructuredTextParser()
-{
-}
-
-StructuredTextDataStore* StructuredTextParser::parse(void)
+StructuredTextDataStore* StructuredTextParser::parse()
 {
 #ifdef Q_OS_WIN
   if (QSysInfo::WindowsVersion == QSysInfo::WV_XP) {

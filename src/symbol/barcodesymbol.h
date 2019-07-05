@@ -34,11 +34,12 @@ class BarcodeSymbol: public TextSymbol {
 public:
   BarcodeSymbol(const BarcodeRecord* rec);
 
-  virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-        QWidget *widget);
-  virtual QString infoText(void);
-  virtual QString longInfoText(void);
-  virtual QPainterPath painterPath(void);
+  void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+        QWidget *widget) override;
+
+  QString infoText() override;
+  QString longInfoText() override;
+  QPainterPath painterPath() override;
 
 private:
   QString m_barcode;

@@ -42,7 +42,7 @@ SquareButterflySymbol::SquareButterflySymbol(const QString& def, const Polarity&
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath SquareButterflySymbol::painterPath(void)
+QPainterPath SquareButterflySymbol::painterPath()
 {
   QPainterPath path;
 

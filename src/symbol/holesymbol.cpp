@@ -45,7 +45,7 @@ HoleSymbol::HoleSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath HoleSymbol::painterPath(void)
+QPainterPath HoleSymbol::painterPath()
 {
   QPainterPath path;
 

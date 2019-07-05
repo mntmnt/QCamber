@@ -29,9 +29,9 @@
 class NotesDataStore: public DataStore {
 public:
   void putRecord(const QStringList& param);
-  const QList<NoteRecord*>& records(void);
+  const QList<NoteRecord*>& records();
 
-  virtual void dump(void);
+  void dump() override;
 
 private:
   QList<NoteRecord*> m_records;

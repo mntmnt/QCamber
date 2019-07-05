@@ -34,9 +34,9 @@ class TextSymbol: public Symbol {
 public:
   TextSymbol(const TextRecord* rec);
 
-  virtual QString infoText(void);
-  virtual QString longInfoText(void);
-  virtual QPainterPath painterPath(void);
+  QString infoText() override;
+  QString longInfoText() override;
+  QPainterPath painterPath() override;
 
 protected:
   qreal m_x, m_y;

@@ -42,7 +42,7 @@ void MeasureGraphicsItem::setRect(const QRectF& rect)
 }
 
 void MeasureGraphicsItem::paint(QPainter *painter,
-    const QStyleOptionGraphicsItem *option, QWidget *widget)
+    const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
   painter->setPen(QPen(Qt::white));
   painter->setBrush(Qt::transparent);

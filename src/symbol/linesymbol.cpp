@@ -53,7 +53,7 @@ LineSymbol::LineSymbol(const LineRecord* rec):
   m_bounding = painterPath().boundingRect();
 }
 
-QString LineSymbol::infoText(void)
+QString LineSymbol::infoText()
 {
   QString info = QString("Line, XS=%1, YS=%2, XE=%3, YE=%4, %5, %6") \
     .arg(m_xs).arg(m_ys) \
@@ -63,7 +63,7 @@ QString LineSymbol::infoText(void)
   return info;
 }
 
-QString LineSymbol::longInfoText(void)
+QString LineSymbol::longInfoText()
 {
   QString result(
       "Line\n\n"

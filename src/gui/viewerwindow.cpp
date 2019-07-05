@@ -144,7 +144,7 @@ void ViewerWindow::showLayer(QString name)
   infobox->toggle();
 }
 
-void ViewerWindow::show(void)
+void ViewerWindow::show()
 {
   QMainWindow::show();
   ui->viewWidget->initialZoom();
@@ -196,7 +196,7 @@ void ViewerWindow::layerActivated(bool status)
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-QColor ViewerWindow::nextColor(void)
+QColor ViewerWindow::nextColor()
 {
   for (int i = 0; i < m_colors.size(); ++i) {
     if (!m_colorsMap[i]) {
@@ -257,7 +257,7 @@ void ViewerWindow::updateMeasureResult(QRectF rect)
     .arg(qSqrt(rect.width() * rect.width() + rect.height() * rect.height())));
 }
 
-void ViewerWindow::on_actionSetColor_triggered(void)
+void ViewerWindow::on_actionSetColor_triggered()
 {
   SettingsDialog dialog;
   dialog.exec();
@@ -265,19 +265,19 @@ void ViewerWindow::on_actionSetColor_triggered(void)
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionZoomIn_triggered(void)
+void ViewerWindow::on_actionZoomIn_triggered()
 {
   ui->viewWidget->scaleView(2);
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionZoomOut_triggered(void)
+void ViewerWindow::on_actionZoomOut_triggered()
 {
   ui->viewWidget->scaleView(0.5);
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionHome_triggered(void)
+void ViewerWindow::on_actionHome_triggered()
 {
   ui->viewWidget->zoomToAll();
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
@@ -313,25 +313,25 @@ void ViewerWindow::on_actionAreaZoom_toggled(bool checked)
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionPanLeft_triggered(void)
+void ViewerWindow::on_actionPanLeft_triggered()
 {
   ui->viewWidget->scrollView(-500, 0);
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionPanRight_triggered(void)
+void ViewerWindow::on_actionPanRight_triggered()
 {
   ui->viewWidget->scrollView(500, 0);
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionPanUp_triggered(void)
+void ViewerWindow::on_actionPanUp_triggered()
 {
   ui->viewWidget->scrollView(0, -500);
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionPanDown_triggered(void)
+void ViewerWindow::on_actionPanDown_triggered()
 {
   ui->viewWidget->scrollView(0, 500);
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
@@ -354,13 +354,13 @@ void ViewerWindow::on_actionHighlight_toggled(bool checked)
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionClearHighlight_triggered(void)
+void ViewerWindow::on_actionClearHighlight_triggered()
 {
   ui->viewWidget->clearHighlight();
   ui->viewWidget->setFocus(Qt::MouseFocusReason);
 }
 
-void ViewerWindow::on_actionFeatureProperties_triggered(void)
+void ViewerWindow::on_actionFeatureProperties_triggered()
 {
   m_featurePropertiesDialog->show();
 }

@@ -42,7 +42,7 @@ NullSymbol::NullSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath NullSymbol::painterPath(void)
+QPainterPath NullSymbol::painterPath()
 {
   QPainterPath path;
 

@@ -174,7 +174,7 @@ void JobMatrix::showLayer(QTableWidgetItem *item)
   w->show();
 }
 
-void JobMatrix::drawDrillLine(QString layer_name,int start,int end)
+void JobMatrix::drawDrillLine(QString layer_name, int start, int end)
 {
   int col = ui->tableWidget->columnCount() + 1;
   ui->tableWidget->setColumnCount(col);
@@ -206,7 +206,7 @@ void JobMatrix::selectDrillLine(int index)
   {
     for(int row = 0;row < m_layerNames.size();row++)
     {
-      if (((item = ui->tableWidget->item(row,col)) != 0))
+      if (((item = ui->tableWidget->item(row,col)) != nullptr))
       {
         if(col != target_col)
         {

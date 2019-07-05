@@ -139,7 +139,7 @@ void FeaturesDataStore::putSurfaceRecord(SurfaceRecord* rec)
   }
 }
 
-void FeaturesDataStore::dump(void)
+void FeaturesDataStore::dump()
 {
   qDebug() << "=== Symbol names ===";
   for (IDMapType::iterator it = m_symbolNameMap.begin();

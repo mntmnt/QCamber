@@ -44,15 +44,15 @@ public:
     const QString& type);
   ~LayerInfoBox();
 
-  QString name(void);
-  QColor color(void);
-  Layer* layer(void);
+  QString name();
+  QColor color();
+  Layer* layer();
 
   void setColor(const QColor& color);
   void setLayer(Layer* layer);
 
-  void toggle(void);
-  bool isActive(void);
+  void toggle();
+  bool isActive();
   void setActive(bool status);
 
 signals:
@@ -61,11 +61,11 @@ signals:
 
 public slots:
   void showContextMenu(const QPoint& point);
-  void on_activeIndicator_clicked(void);
-  void on_actionFeaturesHistogram_activated(void);
+  void on_activeIndicator_clicked();
+  void on_actionFeaturesHistogram_activated();
 
 protected:
-  virtual void mousePressEvent(QMouseEvent *ev);
+  void mousePressEvent(QMouseEvent *) override;
 
 private:
   Ui::LayerInfoBox *ui;

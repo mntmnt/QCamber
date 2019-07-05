@@ -62,7 +62,7 @@ Notes* Layer::notes()
   return m_notes;
 }
 
-QStandardItemModel* Layer::reportModel(void)
+QStandardItemModel* Layer::reportModel()
 {
   return m_features->reportModel();
 }

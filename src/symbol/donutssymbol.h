@@ -31,7 +31,7 @@ public:
   DonutSSymbol(const QString& def, const Polarity& polarity,
       const AttribData& attrib);
 
-  virtual QPainterPath painterPath(void);
+  QPainterPath painterPath();
 
 protected:
 

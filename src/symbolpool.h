@@ -35,7 +35,7 @@ public:
     const AttribData& attrib);
 
 private:
-  SymbolPool();
+  SymbolPool() = default;
 
   static SymbolPool* m_instance;
   QMap<QString, Symbol*> m_cache;

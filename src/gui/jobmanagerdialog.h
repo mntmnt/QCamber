@@ -49,14 +49,14 @@ public:
   ~JobManagerDialog();
 
 public slots:
-  void on_browseButton_clicked(void);
-  void on_importButton_clicked(void);
-  void on_removeButton_clicked(void);
-  void on_setRootButton_clicked(void);
+  void on_browseButton_clicked();
+  void on_importButton_clicked();
+  void on_removeButton_clicked();
+  void on_setRootButton_clicked();
   void on_listView_doubleClicked(const QModelIndex& index);
 
 private:
-  int execute(QString cmd, QStringList args);
+  static int execute(QString cmd, QStringList args);
   bool recurRemove(const QString& dirname);
     
 private:

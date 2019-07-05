@@ -40,7 +40,7 @@ class NotesDataStore;
 struct Record {
   Record(DataStore* _ds, const AttribData& attr): ds(_ds), attrib(attr) {}
   virtual ~Record() { }
-  virtual Symbol* createSymbol(void) const = 0;
+  virtual Symbol* createSymbol() const = 0;
 
   DataStore* ds;
   AttribData attrib;
@@ -50,7 +50,7 @@ struct Record {
 struct LineRecord: public Record {
   LineRecord(FeaturesDataStore* ds, const QStringList& param,
       const AttribData& attr);
-  virtual Symbol* createSymbol(void) const;
+  Symbol* createSymbol() const override;
 
   qreal xs, ys;
   qreal xe, ye;
@@ -62,7 +62,7 @@ struct LineRecord: public Record {
 struct PadRecord: public Record {
   PadRecord(FeaturesDataStore* ds, const QStringList& param,
       const AttribData& attr);
-  virtual Symbol* createSymbol(void) const;
+  Symbol* createSymbol() const override;
 
   qreal x, y;
   int sym_num;
@@ -75,7 +75,7 @@ struct PadRecord: public Record {
 struct ArcRecord: public Record {
   ArcRecord(FeaturesDataStore* ds, const QStringList& param,
       const AttribData& attr);
-  virtual Symbol* createSymbol(void) const;
+  Symbol* createSymbol() const override;
 
   qreal xs, ys;
   qreal xe, ye;
@@ -89,7 +89,7 @@ struct ArcRecord: public Record {
 struct TextRecord: public Record {
   TextRecord(FeaturesDataStore* ds, const QStringList& param,
       const AttribData& attr);
-  virtual Symbol* createSymbol(void) const;
+  Symbol* createSymbol() const override;
 
   void setTransform(Symbol* symbol) const;
   virtual QString dynamicText(QString);
@@ -109,7 +109,7 @@ struct BarcodeRecord: public TextRecord {
 
   BarcodeRecord(FeaturesDataStore* ds, const QStringList& param,
       const AttribData& attr);
-  virtual Symbol* createSymbol(void) const;
+  Symbol* createSymbol() const override;
 
   QString barcode;
   QString e;
@@ -136,7 +136,7 @@ struct PolygonRecord {
 
   PolygonRecord(const QStringList& param);
   virtual ~PolygonRecord();
-  virtual QPainterPath painterPath(void);
+  virtual QPainterPath painterPath();
 
   qreal xbs, ybs;
   PolyType poly_type;
@@ -146,8 +146,8 @@ struct PolygonRecord {
 struct SurfaceRecord: public Record {
   SurfaceRecord(FeaturesDataStore* ds, const QStringList& param,
       const AttribData& attr);
-  virtual ~SurfaceRecord();
-  virtual Symbol* createSymbol(void) const;
+  ~SurfaceRecord();
+  Symbol* createSymbol() const override;
 
   Polarity polarity;
   int dcode;
@@ -181,7 +181,7 @@ struct CharRecord {
 
 struct NoteRecord: public Record {
   NoteRecord(NotesDataStore* ds, const QStringList& param);
-  virtual Symbol* createSymbol(void) const;
+  Symbol* createSymbol() const override;
 
   int timestamp;
   QString user;

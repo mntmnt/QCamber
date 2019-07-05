@@ -43,7 +43,3 @@ UserSymbol::UserSymbol(const QString& def, const Polarity& polarity,
 
   setHandlesChildEvents(true);
 }
-
-UserSymbol::~UserSymbol()
-{
-}

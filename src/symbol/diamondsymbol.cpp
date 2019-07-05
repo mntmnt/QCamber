@@ -43,7 +43,7 @@ DiamondSymbol::DiamondSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath DiamondSymbol::painterPath(void)
+QPainterPath DiamondSymbol::painterPath()
 {
   QPainterPath path;
 

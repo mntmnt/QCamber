@@ -92,7 +92,7 @@ void ODBPPGraphicsMiniMapView::setBackgroundColor(QColor color)
   }
 }
 
-void ODBPPGraphicsMiniMapView::zoomToAll(void)
+void ODBPPGraphicsMiniMapView::zoomToAll()
 {
   zoomToRect(m_profile->boundingRect());
 }

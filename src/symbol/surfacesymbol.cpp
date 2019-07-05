@@ -24,8 +24,8 @@
 
 #include <iostream>
 #include <typeinfo>
-using std::cout;
-using std::endl;
+
+
 
 #include <QtGui>
 #include <QRegExp>
@@ -42,7 +42,7 @@ SurfaceSymbol::SurfaceSymbol(const SurfaceRecord* rec):
   m_bounding = painterPath().boundingRect();
 }
 
-QString SurfaceSymbol::infoText(void)
+QString SurfaceSymbol::infoText()
 {
   QPointF c = m_bounding.center();
   QString info = QString("Surface, XC=%1, YC=%2, Islands=%3, Holes=%4, %5") \
@@ -52,7 +52,7 @@ QString SurfaceSymbol::infoText(void)
   return info;
 }
 
-QString SurfaceSymbol::longInfoText(void)
+QString SurfaceSymbol::longInfoText()
 {
   QPointF c = m_bounding.center();
   QString result(
@@ -69,7 +69,7 @@ QString SurfaceSymbol::longInfoText(void)
     .arg((m_polarity == P)? "POS": "NEG");
 }
 
-QPainterPath SurfaceSymbol::painterPath(void)
+QPainterPath SurfaceSymbol::painterPath()
 {
   QPainterPath path;
 

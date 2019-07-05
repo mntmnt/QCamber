@@ -47,7 +47,7 @@ SquareRoundThermalSymbol::SquareRoundThermalSymbol(const QString& def, const Pol
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath SquareRoundThermalSymbol::painterPath(void)
+QPainterPath SquareRoundThermalSymbol::painterPath()
 {
   QPainterPath path;
 
@@ -77,7 +77,7 @@ QPainterPath SquareRoundThermalSymbol::painterPath(void)
 }
 
 void SquareRoundThermalSymbol::paint(QPainter *painter,
-    const QStyleOptionGraphicsItem *option, QWidget *widget)
+    const QStyleOptionGraphicsItem */*option*/, QWidget */*widget*/)
 {
   if (m_polarity == P) {
     painter->setClipPath(m_sub);

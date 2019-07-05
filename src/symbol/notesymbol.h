@@ -30,9 +30,9 @@ class NoteSymbol: public Symbol {
 public:
   NoteSymbol(const NoteRecord* rec);
 
-  QPainterPath painterPath(void);
-  virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-      QWidget *widget);
+  QPainterPath painterPath() override;
+  void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+      QWidget *widget) override;
 
 protected:
   virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);

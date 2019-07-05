@@ -31,9 +31,9 @@ public:
   SquareRoundThermalSymbol(const QString& def, const Polarity& polarity,
       const AttribData& attrib);
 
-  virtual QPainterPath painterPath(void);
-  virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-      QWidget *widget);
+  QPainterPath painterPath() override;
+  void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+      QWidget *widget) override;
 
 protected:
 

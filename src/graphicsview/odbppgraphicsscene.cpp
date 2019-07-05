@@ -67,7 +67,7 @@ void ODBPPGraphicsScene::setHighlightEnabled(bool status)
   }
 }
 
-void ODBPPGraphicsScene::clearHighlight(void)
+void ODBPPGraphicsScene::clearHighlight()
 {
   for (int i = 0; i < m_layers.size(); ++i) {
     dynamic_cast<GraphicsLayerScene*>(

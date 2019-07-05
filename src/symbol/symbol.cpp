@@ -49,12 +49,12 @@ Symbol::~Symbol()
   */
 }
 
-QString Symbol::name(void)
+QString Symbol::name()
 {
   return m_name;
 }
 
-QString Symbol::infoText(void)
+QString Symbol::infoText()
 {
   QString info = QString("Pad, X=%1, Y=%2, %3, %4") \
     .arg(pos().x()).arg(pos().y()) \
@@ -68,7 +68,7 @@ QString Symbol::infoText(void)
   return info;
 }
 
-QString Symbol::longInfoText(void)
+QString Symbol::longInfoText()
 {
   QString result(
       "Pad\n\n"
@@ -84,7 +84,7 @@ QString Symbol::longInfoText(void)
     .arg(transform().m11() == -1? "Yes": "No");
 }
 
-AttribData Symbol::attrib(void)
+AttribData Symbol::attrib()
 {
   return m_attrib;
 }
@@ -118,8 +118,8 @@ void Symbol::setBrush(const QBrush& brush)
   }
 }
 
-void Symbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-      QWidget *widget)
+void Symbol::paint(QPainter *painter, const QStyleOptionGraphicsItem */*option*/,
+      QWidget */*widget*/)
 {
   // Paint painterPath
   if (m_polarity == P) {
@@ -138,7 +138,7 @@ void Symbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
   painter->drawPath(painterPath());
 }
 
-QPainterPath Symbol::painterPath(void)
+QPainterPath Symbol::painterPath()
 {
   m_bounding = QRectF();
   return QPainterPath();
@@ -150,7 +150,7 @@ void Symbol::addChild(Symbol* symbol)
   m_symbols.append(symbol);
 }
 
-void Symbol::restoreColor(void)
+void Symbol::restoreColor()
 {
   m_selected = false;
   setPen(m_prevPen);
@@ -158,7 +158,7 @@ void Symbol::restoreColor(void)
   update();
 }
 
-void Symbol::mousePressEvent(QGraphicsSceneMouseEvent* event)
+void Symbol::mousePressEvent(QGraphicsSceneMouseEvent* /*event*/)
 {
   GraphicsLayerScene* s = dynamic_cast<GraphicsLayerScene*>(scene());
 
@@ -177,6 +177,6 @@ void Symbol::mousePressEvent(QGraphicsSceneMouseEvent* event)
   s->updateSelection(this);
 }
 
-void Symbol::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
+void Symbol::mouseDoubleClickEvent(QGraphicsSceneMouseEvent*)
 {
 }

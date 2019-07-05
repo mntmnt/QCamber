@@ -43,7 +43,7 @@ DonutRSymbol::DonutRSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath DonutRSymbol::painterPath(void)
+QPainterPath DonutRSymbol::painterPath()
 {
   QPainterPath path;
 

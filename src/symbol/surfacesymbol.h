@@ -34,9 +34,9 @@ class SurfaceSymbol: public Symbol {
 public:
   SurfaceSymbol(const SurfaceRecord* rec);
 
-  virtual QString infoText(void);
-  virtual QString longInfoText(void);
-  virtual QPainterPath painterPath(void);
+  QString infoText() override;
+  QString longInfoText() override;
+  QPainterPath painterPath() override;
 
 private:
   int m_dcode;

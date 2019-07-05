@@ -49,9 +49,9 @@ ODBPPGraphicsView::ODBPPGraphicsView(QWidget* parent): QGraphicsView(parent),
   connect(m_scene, SIGNAL(rectSelected(QRectF)), this,
       SLOT(zoomToRect(QRectF)));
   connect(horizontalScrollBar(), SIGNAL(valueChanged(int)),
-      this, SLOT(updateLayerViewport(void)));
+      this, SLOT(updateLayerViewport()));
   connect(verticalScrollBar(), SIGNAL(valueChanged(int)),
-      this, SLOT(updateLayerViewport(void)));
+      this, SLOT(updateLayerViewport()));
 }
 
 ODBPPGraphicsView::~ODBPPGraphicsView()
@@ -96,7 +96,7 @@ void ODBPPGraphicsView::setZoomMode(ZoomMode mode)
   }
 }
 
-void ODBPPGraphicsView::clearScene(void)
+void ODBPPGraphicsView::clearScene()
 {
   m_scene->clear();
 }
@@ -159,18 +159,18 @@ void ODBPPGraphicsView::setHighlightEnabled(bool status)
   }
 }
 
-void ODBPPGraphicsView::clearHighlight(void)
+void ODBPPGraphicsView::clearHighlight()
 {
   m_scene->clearHighlight();
 }
 
-void ODBPPGraphicsView::initialZoom(void)
+void ODBPPGraphicsView::initialZoom()
 {
   zoomToAll();
   addItem(m_origin);
 }
 
-void ODBPPGraphicsView::zoomToAll(void)
+void ODBPPGraphicsView::zoomToAll()
 {
   QRectF bounding(m_profile->boundingRect());
   QList<GraphicsLayer*> layers = m_scene->layers();
@@ -198,7 +198,7 @@ void ODBPPGraphicsView::zoomToRect(QRectF rect)
   centerOn(b.center());
 }
 
-void ODBPPGraphicsView::updateLayerViewport(void)
+void ODBPPGraphicsView::updateLayerViewport()
 {
   QRect vrect = viewport()->rect();
   QRectF srect = mapToScene(vrect).boundingRect();

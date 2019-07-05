@@ -37,7 +37,7 @@ void GraphicsLayerScene::setGraphicsLayer(GraphicsLayer* layer)
   m_graphicsLayer = layer;
 }
 
-bool GraphicsLayerScene::highlight(void)
+bool GraphicsLayerScene::highlight()
 {
   return m_highlight;
 }
@@ -51,7 +51,7 @@ void GraphicsLayerScene::setHighlightEnabled(bool status)
   }
 }
 
-void GraphicsLayerScene::clearHighlight(void)
+void GraphicsLayerScene::clearHighlight()
 {
   for (int i = 0; i < m_selectedSymbols.size(); ++i) {
     m_selectedSymbols[i]->restoreColor();

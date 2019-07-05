@@ -40,7 +40,7 @@ FeaturesParser::~FeaturesParser()
 {
 }
 
-FeaturesDataStore* FeaturesParser::parse(void)
+FeaturesDataStore* FeaturesParser::parse()
 {
   QFile file(m_fileName);
   if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {

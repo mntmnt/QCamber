@@ -41,7 +41,7 @@ LineRecord::LineRecord(FeaturesDataStore* ds, const QStringList& param,
   dcode = param[++i].toInt();
 }
 
-Symbol* LineRecord::createSymbol(void) const
+Symbol* LineRecord::createSymbol() const
 {
   return new LineSymbol(this);
 }

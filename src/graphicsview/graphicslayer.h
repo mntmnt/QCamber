@@ -32,11 +32,11 @@
 
 class GraphicsLayer: public QGraphicsItem {
 public:
-  GraphicsLayer(QGraphicsItem* parent = 0);
-  virtual ~GraphicsLayer();
+  GraphicsLayer(QGraphicsItem* parent = nullptr);
+  ~GraphicsLayer();
 
   void setLayerScene(GraphicsLayerScene* scene);
-  QGraphicsScene* layerScene(void);
+  QGraphicsScene* layerScene();
 
   void setViewRect(const QRect& rect);
   void setSceneRect(const QRectF& rect);
@@ -44,11 +44,11 @@ public:
   virtual void setPen(const QPen& pen);
   virtual void setBrush(const QBrush& brush);
 
-  virtual QRectF boundingRect() const;
-  virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-      QWidget *widget);
+  QRectF boundingRect() const override;
+  void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+      QWidget *widget) override;
 
-  void forceUpdate(void);
+  void forceUpdate();
 
 protected:
   GraphicsLayerScene* m_layerScene;

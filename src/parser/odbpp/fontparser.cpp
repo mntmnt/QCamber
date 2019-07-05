@@ -33,9 +33,9 @@ FontParser::~FontParser()
 {
 }
 
-FontDataStore* FontParser::parse(void)
+FontDataStore* FontParser::parse()
 {
-  FontDataStore* ds = new FontDataStore;
+  auto ds = new FontDataStore;
   QFile file(m_fileName);
   
   if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -72,7 +72,7 @@ FontDataStore* FontParser::parse(void)
     } else if (line.startsWith("OFFSET")) { // offset
       ds->putOffset(param[1].toDouble());
     } else if (line.startsWith("CHAR")) { // char
-      CharRecord* rec = new CharRecord(ds, param);
+      auto rec = new CharRecord(ds, param);
       ds->putCharRecord(rec);
       block = true;
     }
@@ -87,7 +87,7 @@ void FontParser::charLineData(const QStringList& param)
   m_currentChar->lines.append(rec);
 }
 
-void FontParser::charEnd(void)
+void FontParser::charEnd()
 {
   m_currentChar = nullptr;
 }

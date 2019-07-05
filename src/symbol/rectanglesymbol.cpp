@@ -62,7 +62,7 @@ RectangleSymbol::RectangleSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath RectangleSymbol::painterPath(void)
+QPainterPath RectangleSymbol::painterPath()
 {
   QPainterPath path;
 

@@ -42,7 +42,7 @@ SquareSymbol::SquareSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath SquareSymbol::painterPath(void)
+QPainterPath SquareSymbol::painterPath()
 {
   QPainterPath path;
 

@@ -42,17 +42,17 @@ void FontDataStore::putCharRecord(CharRecord* rec)
   m_records[rec->tchar] = rec;
 }
 
-qreal FontDataStore::offset(void)
+qreal FontDataStore::offset()
 {
   return m_offset;
 }
 
-qreal FontDataStore::xsize(void)
+qreal FontDataStore::xsize()
 {
   return m_xsize;
 }
 
-qreal FontDataStore::ysize(void)
+qreal FontDataStore::ysize()
 {
   return m_ysize;
 }
@@ -62,7 +62,7 @@ CharRecord* FontDataStore::charRecord(const char tchar)
   return m_records[tchar];
 }
 
-void FontDataStore::dump(void)
+void FontDataStore::dump()
 {
 }
 

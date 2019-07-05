@@ -207,7 +207,7 @@ QMap<QChar, unsigned> Code39::s_checksum;
 QMap<unsigned, QChar> Code39::s_checksum_inv;
 QMap<QChar, QString> Code39::s_fascmap;
 
-void Code39::initPatterns(void)
+void Code39::initPatterns()
 {
   for (unsigned i = 0; i < sizeof(c39m) / sizeof(c39m[0]); ++i) {
     s_patterns[c39m[i].tchar] = c39m[i].pattern;

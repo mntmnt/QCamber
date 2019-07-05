@@ -30,9 +30,9 @@
 class FeaturesParser: public Parser {
 public:
   FeaturesParser(const QString& filename);
-  virtual ~FeaturesParser();
+  ~FeaturesParser();
 
-  virtual FeaturesDataStore* parse(void);
+  FeaturesDataStore* parse() override;
 
 private:
   void putAttrlist(const StructuredTextDataStore* ds);

@@ -52,7 +52,7 @@ TextRecord::TextRecord(FeaturesDataStore* ds, const QStringList& param,
   version = param[++i].toInt();
 }
 
-Symbol* TextRecord::createSymbol(void) const
+Symbol* TextRecord::createSymbol() const
 {
   Symbol* symbol = new TextSymbol(this);
   setTransform(symbol);

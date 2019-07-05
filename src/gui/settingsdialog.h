@@ -39,16 +39,16 @@ public:
   explicit SettingsDialog(QWidget *parent = 0);
   ~SettingsDialog();
 
-  void accept(void);
+  void accept();
 
 public slots:
   void chooseColor(QWidget* widget);
-  void on_loadSystemColor_clicked(void);
-  void on_loadUserColor_clicked(void);
-  void on_saveUserColor_clicked(void);
+  void on_loadSystemColor_clicked();
+  void on_loadUserColor_clicked();
+  void on_saveUserColor_clicked();
 
 protected:
-  void reloadColorToolButtonColor(void);
+  void reloadColorToolButtonColor();
   void updateColorToolButtonColor(QToolButton* but);
 
 private:

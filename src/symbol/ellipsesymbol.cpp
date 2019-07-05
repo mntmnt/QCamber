@@ -43,7 +43,7 @@ EllipseSymbol::EllipseSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath EllipseSymbol::painterPath(void)
+QPainterPath EllipseSymbol::painterPath()
 {
   QPainterPath path;
 

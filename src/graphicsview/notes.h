@@ -30,7 +30,7 @@ public:
   Notes(QString step, QString layer);
   virtual ~Notes();
 
-  bool empty(void);
+  bool empty();
 
 private:
   bool m_empty;

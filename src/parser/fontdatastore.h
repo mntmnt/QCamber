@@ -33,12 +33,12 @@ public:
   void putOffset(qreal offset);
   void putCharRecord(CharRecord* rec);
 
-  qreal offset(void);
-  qreal xsize(void);
-  qreal ysize(void);
+  qreal offset();
+  qreal xsize();
+  qreal ysize();
   CharRecord* charRecord(const char tchar);
 
-  virtual void dump(void);
+  void dump() override;
 
 private:
   qreal m_xsize, m_ysize;

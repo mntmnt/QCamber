@@ -69,8 +69,8 @@ LayerInfoBox::LayerInfoBox(const QString& name, const QString& step,
   m_contextMenu->addAction(ui->actionFeaturesHistogram);
 
   setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
-      this, SLOT(showContextMenu(const QPoint&)));
+  connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+      this, SLOT(showContextMenu(QPoint)));
 }
 
 LayerInfoBox::~LayerInfoBox()
@@ -82,17 +82,17 @@ LayerInfoBox::~LayerInfoBox()
   }
 }
 
-QString LayerInfoBox::name(void)
+QString LayerInfoBox::name()
 {
   return m_name;
 }
 
-QColor LayerInfoBox::color(void)
+QColor LayerInfoBox::color()
 {
   return m_color;
 }
 
-Layer* LayerInfoBox::layer(void)
+Layer* LayerInfoBox::layer()
 {
   if (!m_layer) {
     m_layer = new Layer(m_step, m_name);
@@ -125,7 +125,7 @@ void LayerInfoBox::setColor(const QColor& color)
   }
 }
 
-bool LayerInfoBox::isActive(void)
+bool LayerInfoBox::isActive()
 {
   return ui->activeIndicator->property("state") == "active";
 }
@@ -138,7 +138,7 @@ void LayerInfoBox::setActive(bool status)
   emit activated(status);
 }
 
-void LayerInfoBox::toggle(void)
+void LayerInfoBox::toggle()
 {
   emit toggled(m_checked);
   m_checked = !m_checked;
@@ -154,7 +154,7 @@ void LayerInfoBox::showContextMenu(const QPoint& point)
   m_contextMenu->exec(mapToGlobal(point));
 }
 
-void LayerInfoBox::on_activeIndicator_clicked(void)
+void LayerInfoBox::on_activeIndicator_clicked()
 {
   if (m_checked) {
     bool status = (ui->activeIndicator->property("state") == "active");
@@ -162,7 +162,7 @@ void LayerInfoBox::on_activeIndicator_clicked(void)
   }
 }
 
-void LayerInfoBox::on_actionFeaturesHistogram_activated(void)
+void LayerInfoBox::on_actionFeaturesHistogram_activated()
 {
   m_featuresHistogramWidget.setTreeViewModel(layer()->reportModel());
   m_featuresHistogramWidget.show();

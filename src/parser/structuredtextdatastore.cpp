@@ -60,7 +60,7 @@ void StructuredTextDataStore::newElement(string name)
   }
 }
 
-bool StructuredTextDataStore::commitElement(void)
+bool StructuredTextDataStore::commitElement()
 {
   if (!m_currentBlock) {
     return false;
@@ -92,12 +92,12 @@ StructuredTextDataStore::getBlocksByKey(string key)
 }
 
 const StructuredTextDataStore::ValueType&
-StructuredTextDataStore::getValueData(void) const
+StructuredTextDataStore::getValueData() const
 {
   return m_valueData;
 }
 
-void StructuredTextDataStore::dump(void)
+void StructuredTextDataStore::dump()
 {
   for (ValueType::const_iterator iter = m_valueData.begin();
       iter != m_valueData.end(); ++iter) {

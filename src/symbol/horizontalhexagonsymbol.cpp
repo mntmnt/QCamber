@@ -44,7 +44,7 @@ HorizontalHexagonSymbol::HorizontalHexagonSymbol(const QString& def, const Polar
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath HorizontalHexagonSymbol::painterPath(void)
+QPainterPath HorizontalHexagonSymbol::painterPath()
 {
   QPainterPath path;
 

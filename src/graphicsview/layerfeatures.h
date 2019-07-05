@@ -44,11 +44,11 @@ public:
   virtual QRectF boundingRect() const;
   void addToScene(QGraphicsScene* scene);
 
-  qreal x_datum(void) { return m_x_datum; }
-  qreal y_datum(void) { return m_y_datum; }
-  FeaturesDataStore* dataStore(void) { return m_ds; }
+  qreal x_datum() { return m_x_datum; }
+  qreal y_datum() { return m_y_datum; }
+  FeaturesDataStore* dataStore() { return m_ds; }
 
-  QStandardItemModel* reportModel(void);
+  QStandardItemModel* reportModel();
 
   void setTransform(const QTransform& matrix, bool combine = false);
   void setPos(QPointF pos);
@@ -57,7 +57,7 @@ public:
   void setShowStepRepeat(bool status);
 
 protected:
-  void loadStepAndRepeat(void);
+  void loadStepAndRepeat();
 
 private:
   LayerFeatures* m_virtualParent;

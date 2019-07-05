@@ -24,11 +24,6 @@
 
 SymbolPool* SymbolPool::m_instance = nullptr;
 
-SymbolPool::SymbolPool()
-{
-
-}
-
 SymbolPool::~SymbolPool()
 {
   for (QMap<QString, Symbol*>::iterator it = m_cache.begin();

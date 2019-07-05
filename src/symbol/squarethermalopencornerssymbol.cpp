@@ -46,7 +46,7 @@ SquareThermalOpenCornersSymbol::SquareThermalOpenCornersSymbol(const QString& de
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath SquareThermalOpenCornersSymbol::painterPath(void)
+QPainterPath SquareThermalOpenCornersSymbol::painterPath()
 {
   QPainterPath path;
 

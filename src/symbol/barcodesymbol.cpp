@@ -56,7 +56,7 @@ BarcodeSymbol::BarcodeSymbol(const BarcodeRecord* rec):
   m_bounding = painterPath().boundingRect();
 }
 
-QString BarcodeSymbol::infoText(void)
+QString BarcodeSymbol::infoText()
 {
   QString info = QString("Text/BC, X=%1, Y=%2, %3, %4, %5, %6, %7") \
     .arg(m_x).arg(m_y) \
@@ -68,7 +68,7 @@ QString BarcodeSymbol::infoText(void)
   return info;
 }
 
-QString BarcodeSymbol::longInfoText(void)
+QString BarcodeSymbol::longInfoText()
 {
   QString result(
       "Text/BC\n\n"
@@ -110,7 +110,7 @@ void BarcodeSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem*,
   painter->drawPath(path);
 }
 
-QPainterPath BarcodeSymbol::painterPath(void)
+QPainterPath BarcodeSymbol::painterPath()
 {
   QPainterPath path;
   QString bar_pattern = Code39::encode(m_text, m_cs, m_fasc);

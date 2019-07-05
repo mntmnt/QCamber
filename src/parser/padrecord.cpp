@@ -45,7 +45,7 @@ PadRecord::PadRecord(FeaturesDataStore* ds, const QStringList& param,
   sym_name = ds->symbolNameMap()[sym_num];
 }
 
-Symbol* PadRecord::createSymbol(void) const
+Symbol* PadRecord::createSymbol() const
 {
   Symbol* symbol = SymbolFactory::create(sym_name, polarity, attrib);
   symbol->setPos(x, -y);

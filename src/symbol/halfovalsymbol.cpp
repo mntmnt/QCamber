@@ -43,7 +43,7 @@ HalfOvalSymbol::HalfOvalSymbol(const QString& def, const Polarity& polarity,
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath HalfOvalSymbol::painterPath(void)
+QPainterPath HalfOvalSymbol::painterPath()
 {
   QPainterPath path;
 

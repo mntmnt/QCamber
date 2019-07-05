@@ -45,7 +45,7 @@ PolygonRecord::~PolygonRecord()
   }
 }
 
-QPainterPath PolygonRecord::painterPath(void)
+QPainterPath PolygonRecord::painterPath()
 {
   QPainterPath path;
   qreal lx, ly;
@@ -108,7 +108,7 @@ SurfaceRecord::~SurfaceRecord()
   }
 }
 
-Symbol* SurfaceRecord::createSymbol(void) const
+Symbol* SurfaceRecord::createSymbol() const
 {
   return new SurfaceSymbol(this);
 }

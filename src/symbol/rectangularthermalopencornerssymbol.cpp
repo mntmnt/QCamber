@@ -47,7 +47,7 @@ RectangularThermalOpenCornersSymbol::RectangularThermalOpenCornersSymbol(const Q
   m_bounding = painterPath().boundingRect();
 }
 
-QPainterPath RectangularThermalOpenCornersSymbol::painterPath(void)
+QPainterPath RectangularThermalOpenCornersSymbol::painterPath()
 {
   QPainterPath path;
 
